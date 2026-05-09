@@ -1,0 +1,60 @@
+{
+    "name": "codesec",
+    "displayName": "CodeSec — AI Code Quality",
+    "description": "Real-time code quality, security, and AI-powered fixes. No server needed.",
+    "version": "0.1.0",
+    "publisher": "your-publisher-id",
+    "engines": { "vscode": "^1.85.0" },
+    "categories": ["Linters", "Other"],
+    "activationEvents": ["onStartupFinished"],
+    "main": "./out/extension.js",
+    "contributes": {
+      "commands": [
+        { "command": "codeSec.analyzeFile",      "title": "CodeSec: Analyze Current File" },
+        { "command": "codeSec.analyzeWorkspace", "title": "CodeSec: Analyze Entire Workspace" },
+        { "command": "codeSec.clearIssues",      "title": "CodeSec: Clear All Issues" },
+        { "command": "codeSec.openDashboard",    "title": "CodeSec: Open Dashboard" },
+        { "command": "codeSec.generateConfig",   "title": "CodeSec: Generate .codesec.json" },
+        { "command": "codeSec.fixWithAi",        "title": "CodeSec: Fix with AI" },
+        { "command": "codeSec.explainIssue",     "title": "CodeSec: Explain this Issue" }
+      ],
+      "configuration": {
+        "title": "CodeSec",
+        "properties": {
+          "codeSec.aiProvider": {
+            "type": "string",
+            "default": "ollama",
+            "enum": ["ollama", "openrouter", "anthropic", "openai-compatible"],
+            "description": "Which AI backend to use"
+          },
+          "codeSec.aiModel":   { "type": "string",  "default": "" },
+          "codeSec.aiApiKey":  { "type": "string",  "default": "" },
+          "codeSec.aiBaseUrl": { "type": "string",  "default": "" },
+          "codeSec.analyzeOnSave":          { "type": "boolean", "default": true },
+          "codeSec.enableAiAnalysis":       { "type": "boolean", "default": true },
+          "codeSec.enableStaticAnalysis":   { "type": "boolean", "default": true },
+          "codeSec.complexityThreshold":    { "type": "number",  "default": 10 },
+          "codeSec.duplicateLineThreshold": { "type": "number",  "default": 6 },
+          "codeSec.languages": {
+            "type": "array",
+            "default": ["javascript","typescript","python","java"]
+          }
+        }
+      },
+      "viewsContainers": {
+        "activitybar": [{ "id": "codeSec", "title": "CodeSec", "icon": "media/icon.svg" }]
+      },
+      "views": {
+        "codeSec": [{ "type": "webview", "id": "codeSec.dashboard", "name": "Dashboard" }]
+      }
+    },
+    "scripts": {
+      "compile": "tsc -p ./",
+      "watch":   "tsc -watch -p ./"
+    },
+    "devDependencies": {
+      "@types/node":   "^20.0.0",
+      "@types/vscode": "^1.85.0",
+      "typescript":    "^5.3.0"
+    }
+  }
