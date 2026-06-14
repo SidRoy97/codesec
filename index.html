@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Codescape — AI Code Quality for VS Code</title>
+  <title>Codescape — AI Code Quality &amp; Impact Graph for VS Code</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -16,7 +16,7 @@
     h1 { font-size: 52px; font-weight: 800; margin-bottom: 16px;
          background: linear-gradient(135deg, #a78bfa, #60a5fa);
          -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .subtitle { font-size: 20px; opacity: 0.7; max-width: 560px;
+    .subtitle { font-size: 20px; opacity: 0.7; max-width: 600px;
                 margin: 0 auto 40px; line-height: 1.6; }
 
     .install-box { background: #1e1e2e; border: 1px solid #7c3aed44;
@@ -60,17 +60,17 @@
   <div class="badge">🛡 Free &amp; Open Source</div>
   <h1>Codescape</h1>
   <p class="subtitle">
-    Real-time code quality, security analysis, and AI-powered fixes for VS Code.
-    No server required.
+    Real-time code quality, security analysis, AI-powered fixes, and an
+    interactive code impact graph for VS Code. No server required.
   </p>
 
   <div class="install-box">
-    <code>code --install-extension SidRoy97.codescape</code>
+    <code>code --install-extension SidRoy300497.codescape</code>
   </div>
 
   <div class="buttons">
     <a class="btn btn-primary"
-       href="https://marketplace.visualstudio.com/items?itemName=SidRoy97.codescape">
+       href="https://marketplace.visualstudio.com/items?itemName=SidRoy300497.codescape">
       Install from Marketplace
     </a>
     <a class="btn btn-secondary"
@@ -81,6 +81,11 @@
 </div>
 
 <div class="features">
+  <div class="feature">
+    <div class="feature-icon">🕸️</div>
+    <h3>Code Impact Graph</h3>
+    <p>See callers, callees, and blast radius for any function. Know exactly what breaks before you change it — across your whole project.</p>
+  </div>
   <div class="feature">
     <div class="feature-icon">🔒</div>
     <h3>Security Analysis</h3>
@@ -105,11 +110,6 @@
     <div class="feature-icon">🧠</div>
     <h3>AI Context Generation</h3>
     <p>AGENTS.md universal context file works with Claude Code, Cursor, ChatGPT, and Copilot automatically.</p>
-  </div>
-  <div class="feature">
-    <div class="feature-icon">📊</div>
-    <h3>Blast Radius</h3>
-    <p>See how many files break if you change this one — before you touch it.</p>
   </div>
 </div>
 
